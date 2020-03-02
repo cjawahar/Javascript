@@ -27,6 +27,12 @@
             "request": "launch",
             "name": "Launch Program",
             "program": "${workspaceFolder}/app.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "nestedFunctions",
+            "program": "${workspaceFolder}/js_html/nestedFunctions.js"
         }
     ]
 }

@@ -1,25 +1,21 @@
-class Animals {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
+let animal = {
+    eats: true,
+    walk() {
+        console.log("Animal walks");
     }
-    sing() {
-        return `${this.name} can sing`;
-    }
-    dance() {
-        return `${this.name} can dance`;
-    }
-} 
-class Cats extends Animals {
-    constructor(name, age, whiskerColor) {
-        super(name, age);
-        this.whiskerColor = whiskerColor;
-    }
-    whiskers() {
-        return `I have ${this.whiskerColor} whiskers`;
-    }
-}
-let clara = new Cats("Clara", 33, "indigo");
-let bingo = new Animals("Bingo", "Hairy");
-console.log(bingo);
-console.log(clara);
+};
+let rabbit = {
+    jumps: true,
+    __proto__: animal
+};
+
+let longEar = {
+    earLength: 10,
+    __proto__: rabbit
+};
+
+// we can find both properties in rabbit now:
+console.log(rabbit.eats); // true (**)
+rabbit.walk();
+longEar.walk();
+console.log(longEar.jumps);
